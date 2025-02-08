@@ -48,6 +48,13 @@ const Pricing = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '5212761141587';
+    const message = 'Hola, me gustaría obtener más información sobre los paquetes de servicios.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const plans = [
     {
       title: "Paquete Básico - Starter",
@@ -92,6 +99,12 @@ const Pricing = () => {
           />
         ))}
       </div>
+      <button 
+        onClick={handleWhatsAppClick}
+        className="cta-button"
+      >
+        Solicitar Información
+      </button>
     </section>
   );
 };
