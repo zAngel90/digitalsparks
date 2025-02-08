@@ -11,5 +11,10 @@ export default defineConfig({
       '*.ngrok-free.app', // Permite todos los subdominios de ngrok-free.app
       'f5b3-2800-e2-c080-95b-28b9-7a7e-bdbe-2567.ngrok-free.app' // Tu dominio específico de ngrok
     ]
-  }
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: true
+  },
+  base: '/'
 })
