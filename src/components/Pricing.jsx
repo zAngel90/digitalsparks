@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const PriceCard = ({ title, price, features, index, className }) => {
+const PriceCard = ({ title, price, features, index, className, onWhatsAppClick }) => {
   return (
     <div className={`price-card ${className}`} style={{ animationDelay: `${index * 0.2}s` }}>
       <div className="price-header">
@@ -23,7 +23,7 @@ const PriceCard = ({ title, price, features, index, className }) => {
         ))}
       </div>
       
-      <button className="hero-cta">
+      <button className="hero-cta" onClick={onWhatsAppClick}>
         Solicitar Información
       </button>
     </div>
@@ -96,15 +96,10 @@ const Pricing = () => {
             {...plan} 
             index={idx} 
             className={`scroll-animate fade-up-fancy scroll-delay-${idx + 1}`}
+            onWhatsAppClick={handleWhatsAppClick}
           />
         ))}
       </div>
-      <button 
-        onClick={handleWhatsAppClick}
-        className="cta-button"
-      >
-        Solicitar Información
-      </button>
     </section>
   );
 };
